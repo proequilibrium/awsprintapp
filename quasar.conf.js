@@ -1,8 +1,6 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
-
-
 module.exports = function (ctx) {
   return {
     // app boot file (/src/boot)
@@ -15,13 +13,13 @@ module.exports = function (ctx) {
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
-      //'ionicons-v4',
-      //'mdi-v4',
-      //'fontawesome-v5',
-      //'eva-icons',
-      //'themify',
-      //'line-awesome',
-      //'roboto-font-latin-ext', // this or either'roboto-font', NEVER both!
+      // 'ionicons-v4',
+      // 'mdi-v4',
+      // 'fontawesome-v5',
+      // 'eva-icons',
+      // 'themify',
+      // 'line-awesome',
+      // 'roboto-font-latin-ext', // this or either'roboto-font', NEVER both!
 
       'roboto-font', // optional, you are not bound to it
       'material-icons' // optional, you are not bound to it
@@ -71,17 +69,17 @@ module.exports = function (ctx) {
       // extractCSS: false,
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
-      extendWebpack(cfg) {
-        cfg.resolve.extensions.unshift('.mjs'),
-          cfg.module.rules.push({
-            enforce: 'pre',
-            test: /\.(js|vue)$/,
-            //loader: 'eslint-loader',
-            exclude: /node_modules/,
-            //options: {
-            //  formatter: require('eslint').CLIEngine.getFormatter('stylish')
-            //}
-          });
+      extendWebpack (cfg) {
+        cfg.resolve.extensions.unshift('.mjs')
+        cfg.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /node_modules/,
+          options: {
+            formatter: require('eslint').CLIEngine.getFormatter('stylish')
+          }
+        })
       }
     },
 
@@ -103,7 +101,7 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/developing-pwa/configuring-pwa
     pwa: {
-      workboxPluginMode: 'GenerateSW', //'GenerateSW' or'InjectManifest'
+      workboxPluginMode: 'GenerateSW', // 'GenerateSW' or'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
         name: 'Quasar Print',
@@ -156,7 +154,7 @@ module.exports = function (ctx) {
 
     // Full list of options: https://quasar.dev/quasar-cli/developing-electron-apps/configuring-electron
     electron: {
-      bundler: 'packager', //'packager' or'builder'
+      bundler: 'packager', // 'packager' or'builder'
 
       packager: {
         // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
@@ -178,10 +176,10 @@ module.exports = function (ctx) {
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
       nodeIntegration: true,
 
-      extendWebpack(cfg) {
+      extendWebpack (cfg) {
         // do something with Electron main process Webpack cfg
         // chainWebpack also available besides this extendWebpack
       }
     }
-  };
+  }
 }
