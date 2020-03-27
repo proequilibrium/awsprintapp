@@ -8,8 +8,8 @@ module.exports = function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of'main.js'
     // https://quasar.dev/quasar-cli/cli-documentation/boot-files
-    boot: ['axios','amplify'],
-    
+    boot: ['axios', 'amplify', 'appsync'],
+
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: ['app.sass'],
 
@@ -72,16 +72,16 @@ module.exports = function (ctx) {
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack(cfg) {
-        cfg.resolve.extensions.unshift(".mjs"),
-        cfg.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /node_modules/,
-          options: {
-            formatter: require('eslint').CLIEngine.getFormatter('stylish')
-          }
-        });
+        cfg.resolve.extensions.unshift('.mjs'),
+          cfg.module.rules.push({
+            enforce: 'pre',
+            test: /\.(js|vue)$/,
+            loader: 'eslint-loader',
+            exclude: /node_modules/,
+            options: {
+              formatter: require('eslint').CLIEngine.getFormatter('stylish')
+            }
+          });
       }
     },
 

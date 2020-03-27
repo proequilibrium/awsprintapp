@@ -1,0 +1,35 @@
+quasar create quasar-print -b dev
+npm install --save aws-amplify
+npm install --save aws-amplify-vue
+npm install --save aws-appsync
+npm install --save graphql 
+npm install --save graphql-tag
+npm install --save vue-apollo
+amplify init
+amplify add api
+amplify add hosting
+	prod
+amplify push
+	
+amplify publish
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/mfreeman451/quasar-amplify-demo.git
+git push origin master
+
+--- configurace CI CD na mazon amplify
+
+quasar new boot amplify
+copy code --- 
+amplify.js
+router.js
+quasar.conf.js
+
+quasar new p Auth
+quasar new p Todo
+quasar new p Profile
+quasar new p SignUp
+quasar new p SignIn
+
+quasar new boot appsync
