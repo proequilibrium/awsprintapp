@@ -7,7 +7,7 @@
         </q-btn>
         <div class="row">
           <router-link :to="{ name: 'todo' }" tag="span" style="cursor: pointer">
-            <q-toolbar-title>quasar-amplify-demo</q-toolbar-title>
+            <q-toolbar-title>PF APP</q-toolbar-title>
           </router-link>
 
           <div class="fixed-right">Quasar v{{ $q.version }}</div>
@@ -17,15 +17,15 @@
 
     <q-drawer v-model="leftDrawerOpen" bordered content-class="bg-grey-2">
       <q-list>
-        <q-item-label header>quasar-amplify-demo app</q-item-label>
+        <q-item-label header>Dashboard</q-item-label>
 
         <q-item clickable :to="{name: 'todo'}">
           <q-item-section avatar>
             <q-icon name="note"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Todo App</q-item-label>
-            <q-item-label caption>create a todo list..</q-item-label>
+            <q-item-label>Udelat</q-item-label>
+            <q-item-label caption>vytvori list uloh</q-item-label>
           </q-item-section>
         </q-item>
 
@@ -35,8 +35,8 @@
               <q-icon name="settings"/>
             </q-item-section>
             <q-item-section>
-              <q-item-label>Profile</q-item-label>
-              <q-item-label caption>view your profile</q-item-label>
+              <q-item-label>Profil</q-item-label>
+              <q-item-label caption>ukaze profil</q-item-label>
             </q-item-section>
           </q-item>
         </div>
@@ -47,7 +47,7 @@
               <q-icon name="stop"/>
             </q-item-section>
             <q-item-section>
-              <q-item-label>Logout</q-item-label>
+              <q-item-label>Odhlaseni</q-item-label>
             </q-item-section>
           </q-item>
         </div>
@@ -58,8 +58,8 @@
               <q-icon name="group"/>
             </q-item-section>
             <q-item-section>
-              <q-item-label>Login/SignUp</q-item-label>
-              <q-item-label caption>Login or Signup</q-item-label>
+              <q-item-label>Prihlasi/Registruje</q-item-label>
+              <q-item-label caption>Prihlaseni nebo Registrace</q-item-label>
             </q-item-section>
           </q-item>
         </div>

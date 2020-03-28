@@ -13,10 +13,10 @@
           filled
           color="teal"
           dense
-          label="Name"
+          label="Jmeno"
           clearable
           lazy-rules
-          :rules="[ val => val && val.length > 0 || 'Missing name']"
+          :rules="[ val => val && val.length > 0 || 'Neni jmeno']"
           v-model="name"
         />
         <q-input
@@ -25,10 +25,10 @@
           filled
           color="teal"
           dense
-          label="Description"
+          label="Popis"
           clearable
           lazy-rules
-          :rules="[ val => val && val.length > 0 || 'Missing description']"
+          :rules="[ val => val && val.length > 0 || 'Neni popis']"
           v-model="description"
         />
 
@@ -38,7 +38,7 @@
           filled
           dense
           lazy-rules
-          :rules="[ val => val && val.length > 0 || 'Missing date']"
+          :rules="[ val => val && val.length > 0 || 'Chybi datum']"
           v-model="date"
         >
           <template v-slot:append>
@@ -47,7 +47,7 @@
         </q-input>
 
         <div class="row center">
-          <q-btn type="submit" label="Create Todo" class="todoButton">
+          <q-btn type="submit" label="Novy ukol" class="todoButton">
             <template v-slot:loading>
               <q-spinner-facebook/>
             </template>
@@ -58,12 +58,12 @@
           <li class="todo" v-for="(todo, index) in todos" :key="index">
             <p class="todoname">{{ todo.name }}</p>
             <p class="text">{{ todo.description }}</p>
-            <p class="text">Due: {{ todo.date }}</p>
+            <p class="text">termin: {{ todo.date }}</p>
             <p
               @click="toggleComplete(todo)"
               class="text button"
-            >{{ todo.completed ? 'completed' : 'not completed' }}</p>
-            <p @click="deleteTodo(todo)" class="text button delete">Delete todo item</p>
+            >{{ todo.completed ? 'hotovo' : 'rozdelano' }}</p>
+            <p @click="deleteTodo(todo)" class="text button delete">Smazat zaznam</p>
           </li>
         </ul>
       </div>
