@@ -40,6 +40,20 @@ const routes = [
         }
       }
     ]
+  },
+  {
+    path: '/calc',
+    component: () => import('layouts/MyLayout.vue'),
+    children: [
+      {
+        name: 'calc',
+        path: '',
+        component: () => import('pages/Calculator.vue'),
+        meta: {
+          requiresAuth: false
+        }
+      }
+    ]
   }
 ]
 // Always leave this as last one
