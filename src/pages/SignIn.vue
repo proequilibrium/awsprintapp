@@ -5,7 +5,7 @@
       <q-input square filled color="teal" label="Username" v-model="form.username"/>
       <q-input square filled color="teal" label="Password" type="password" v-model="form.password"/>
       <div class="row">
-        <q-btn type="submit" @click="signIn" label="Sign In" class="authButton">
+        <q-btn type="submit" @click="signIn" label="Prihlasit" class="authButton">
           <template v-slot:loading>
             <q-spinner-facebook/>
           </template>
@@ -41,7 +41,7 @@ export default {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background-color: #2196f3;
+  background-color: #f3218a;
   border: none;
   color: white;
   outline: none;

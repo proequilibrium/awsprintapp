@@ -8,7 +8,7 @@
           square
           filled
           color="teal"
-          label="Password"
+          label="Heslo"
           type="password"
           v-model="form.password"
         />
@@ -69,7 +69,7 @@ export default {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background-color: #2196f3;
+  background-color: #f3218a;
   border: none;
   color: white;
   outline: none;

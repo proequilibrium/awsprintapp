@@ -40,11 +40,15 @@ module.exports = function (ctx) {
       all: true,
 
       components: [
+        'QBtn',
         'QInput',
         'QDate',
         'QTime',
         'QPopupProxy',
-        'QCircularProgress'
+        'QCircularProgress',
+        'QCard',
+        'QCardSection',
+        'QCardActions',
       ],
       directives: [],
 

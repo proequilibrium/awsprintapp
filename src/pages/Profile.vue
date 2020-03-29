@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Welcome, {{user.username}}</h1>
+    <h3>Ucet, </h3>
+    <div>code: {{user.username}}</div>
   </div>
 </template>
 <script>

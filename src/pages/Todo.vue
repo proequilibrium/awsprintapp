@@ -56,14 +56,19 @@
 
         <ul>
           <li class="todo" v-for="(todo, index) in todos" :key="index">
-            <p class="todoname">{{ todo.name }}</p>
-            <p class="text">{{ todo.description }}</p>
-            <p class="text">termin: {{ todo.date }}</p>
-            <p
-              @click="toggleComplete(todo)"
-              class="text button"
-            >{{ todo.completed ? 'hotovo' : 'rozdelano' }}</p>
-            <p @click="deleteTodo(todo)" class="text button delete">Smazat zaznam</p>
+             <q-card
+                class="my-card text-white"
+                style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)"
+              >
+                <p class="todoname">{{ todo.name }}</p>
+                <p class="text">{{ todo.description }}</p>
+                <p class="text">termin: {{ todo.date }}</p>
+                <q-btn
+                  @click="toggleComplete(todo)"
+                  class="text button"
+                >{{ todo.completed ? 'hotovo' : 'rozdelano' }}</q-btn>
+                    <q-btn style="background: #FF0080; color: white" label="Smazat zaznam"  @click="deleteTodo(todo)" class="text button delete" />
+             </q-card>
           </li>
         </ul>
       </div>
@@ -229,7 +234,7 @@ export default {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background-color: #2196f3;
+  background-color: #f3218a;
   border: none;
   color: white;
   outline: none;
@@ -250,7 +255,7 @@ export default {
   margin-bottom: 0px;
 }
 .delete {
-  color: #2196f3;
+  color: #f3218a;
 }
 .todo {
   display: block;

@@ -1,0 +1,275 @@
+                                # Starting phase: preBuild
+2020-03-28T10:36:21.128Z [INFO]: # Executing command: npm install -g @quasar/cli
+2020-03-28T10:36:23.339Z [WARNING]: npm WARN deprecated
+2020-03-28T10:36:23.340Z [WARNING]: mkdirp@0.5.4: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+2020-03-28T10:36:25.536Z [WARNING]: npm WARN deprecated coffee-script@1.12.7: CoffeeScript on NPM has moved to "coffeescript" (no hyphen)
+2020-03-28T10:36:28.885Z [INFO]: /root/.nvm/versions/node/v10.16.0/bin/quasar -> /root/.nvm/versions/node/v10.16.0/lib/node_modules/@quasar/cli/bin/quasar
+2020-03-28T10:36:28.938Z [INFO]: + @quasar/cli@1.0.5
+                                 added 294 packages from 226 contributors in 7.412s
+2020-03-28T10:36:28.949Z [INFO]: # Executing command: npm install -g eslint
+2020-03-28T10:36:29.917Z [WARNING]: npm WARN
+2020-03-28T10:36:29.917Z [WARNING]: deprecated mkdirp@0.5.4: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+2020-03-28T10:36:33.147Z [INFO]: /root/.nvm/versions/node/v10.16.0/bin/eslint -> /root/.nvm/versions/node/v10.16.0/lib/node_modules/eslint/bin/eslint.js
+2020-03-28T10:36:33.174Z [INFO]: + eslint@6.8.0
+                                 added 134 packages from 84 contributors in 3.823s
+2020-03-28T10:36:33.184Z [INFO]: # Executing command: npm ci
+2020-03-28T10:36:33.639Z [WARNING]: npm
+2020-03-28T10:36:33.639Z [WARNING]: WARN prepare removing existing node_modules/ before installation
+2020-03-28T10:36:47.312Z [INFO]: > core-js@2.6.11 postinstall /codebuild/output/src820201576/src/awsprintapp/node_modules/core-js
+                                 > node -e "try{require('./postinstall')}catch(e){}"
+2020-03-28T10:36:47.414Z [INFO]: > core-js-pure@3.6.4 postinstall /codebuild/output/src820201576/src/awsprintapp/node_modules/core-js-pure
+                                 > node -e "try{require('./postinstall')}catch(e){}"
+2020-03-28T10:36:47.679Z [INFO]: > fsevents@1.2.12 install /codebuild/output/src820201576/src/awsprintapp/node_modules/webpack-dev-server/node_modules/fsevents
+                                 > node-gyp rebuild
+2020-03-28T10:36:47.804Z [WARNING]: gyp
+2020-03-28T10:36:47.805Z [WARNING]: 
+2020-03-28T10:36:47.805Z [WARNING]: info it worked if it ends with ok
+2020-03-28T10:36:47.807Z [WARNING]: gyp
+2020-03-28T10:36:47.807Z [WARNING]: info using node-gyp@3.8.0
+                                    gyp info using node@10.16.0 | linux | x64
+2020-03-28T10:36:49.045Z [WARNING]: gyp
+2020-03-28T10:36:49.047Z [WARNING]: info spawn /usr/bin/python2
+                                    gyp info spawn args [ '/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py',
+                                    gyp info spawn args   'binding.gyp',
+                                    gyp info spawn args   '-f',
+                                    gyp info spawn args   'make',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/codebuild/output/src820201576/src/awsprintapp/node_modules/webpack-dev-server/node_modules/fsevents/build/config.gypi',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp/addon.gypi',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/root/.node-gyp/10.16.0/include/node/common.gypi',
+                                    gyp info spawn args   '-Dlibrary=shared_library',
+                                    gyp info spawn args   '-Dvisibility=default',
+                                    gyp info spawn args   '-Dnode_root_dir=/root/.node-gyp/10.16.0',
+                                    gyp info spawn args   '-Dnode_gyp_dir=/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp',
+                                    gyp info spawn args   '-Dnode_lib_file=/root/.node-gyp/10.16.0/<(target_arch)/node.lib',
+                                    gyp info spawn args   '-Dmodule_root_dir=/codebuild/output/src820201576/src/awsprintapp/node_modules/webpack-dev-server/node_modules/fsevents',
+                                    gyp info spawn args   '-Dnode_engine=v8',
+                                    gyp info spawn args   '--depth=.',
+                                    gyp info spawn args   '--no-parallel',
+                                    gyp info spawn args   '--generator-output',
+                                    gyp info spawn args   'build',
+                                    gyp info spawn args   '-Goutput_dir=.' ]
+2020-03-28T10:36:49.537Z [WARNING]: gyp info
+2020-03-28T10:36:49.537Z [WARNING]: spawn make
+                                    gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+2020-03-28T10:36:49.539Z [INFO]: make: Entering directory `/codebuild/output/src820201576/src/awsprintapp/node_modules/webpack-dev-server/node_modules/fsevents/build'
+2020-03-28T10:36:49.541Z [INFO]: SOLINK_MODULE(target) Release/obj.target/.node
+2020-03-28T10:36:50.204Z [INFO]: COPY Release/.node
+2020-03-28T10:36:50.210Z [INFO]: make: Leaving directory `/codebuild/output/src820201576/src/awsprintapp/node_modules/webpack-dev-server/node_modules/fsevents/build'
+2020-03-28T10:36:50.212Z [WARNING]: gyp info ok
+2020-03-28T10:36:50.236Z [INFO]: > ejs@2.7.4 postinstall /codebuild/output/src820201576/src/awsprintapp/node_modules/ejs
+                                 > node ./postinstall.js
+2020-03-28T10:36:50.298Z [INFO]: Thank you for installing [35mEJS[0m: built with the [32mJake[0m JavaScript build tool ([32mhttps://jakejs.com/[0m)
+2020-03-28T10:36:50.347Z [INFO]: > fsevents@1.2.12 install /codebuild/output/src820201576/src/awsprintapp/node_modules/watchpack/node_modules/fsevents
+                                 > node-gyp rebuild
+2020-03-28T10:36:50.449Z [WARNING]: gyp
+2020-03-28T10:36:50.450Z [WARNING]: 
+2020-03-28T10:36:50.450Z [WARNING]: info it worked if it ends with ok
+2020-03-28T10:36:50.452Z [WARNING]: gyp
+2020-03-28T10:36:50.452Z [WARNING]: info using node-gyp@3.8.0
+                                    gyp info using node@10.16.0 | linux | x64
+2020-03-28T10:36:50.605Z [WARNING]: gyp
+2020-03-28T10:36:50.606Z [WARNING]: info spawn /usr/bin/python2
+                                    gyp info spawn args [ '/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py',
+                                    gyp info spawn args   'binding.gyp',
+                                    gyp info
+2020-03-28T10:36:50.606Z [WARNING]: spawn args   '-f',
+                                    gyp info spawn args   'make',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/codebuild/output/src820201576/src/awsprintapp/node_modules/watchpack/node_modules/fsevents/build/config.gypi',
+                                    gyp
+2020-03-28T10:36:50.606Z [WARNING]: info spawn args   '-I',
+                                    gyp info spawn args   '/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp/addon.gypi',
+                                    gyp info spawn args   '-I',
+                                    gyp
+2020-03-28T10:36:50.606Z [WARNING]: info spawn args   '/root/.node-gyp/10.16.0/include/node/common.gypi',
+                                    gyp info spawn args   '-Dlibrary=shared_library',
+                                    gyp info spawn args   '-Dvisibility=default',
+                                    gyp
+2020-03-28T10:36:50.607Z [WARNING]: info spawn args   '-Dnode_root_dir=/root/.node-gyp/10.16.0',
+                                    gyp info spawn args   '-Dnode_gyp_dir=/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp',
+                                    gyp info spawn args   '-Dnode_lib_file=/root/.node-gyp/10.16.0/<(target_arch)/node.lib',
+2020-03-28T10:36:50.607Z [WARNING]: gyp info spawn args   '-Dmodule_root_dir=/codebuild/output/src820201576/src/awsprintapp/node_modules/watchpack/node_modules/fsevents',
+                                    gyp info spawn args   '-Dnode_engine=v8',
+                                    gyp info spawn args
+2020-03-28T10:36:50.607Z [WARNING]: '--depth=.',
+                                    gyp info spawn args   '--no-parallel',
+                                    gyp info spawn args   '--generator-output',
+                                    gyp info
+2020-03-28T10:36:50.607Z [WARNING]: spawn args   'build',
+                                    gyp info spawn args   '-Goutput_dir=.' ]
+2020-03-28T10:36:50.654Z [WARNING]: gyp
+2020-03-28T10:36:50.655Z [WARNING]: info spawn make
+                                    gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+2020-03-28T10:36:50.656Z [INFO]: make: Entering directory `/codebuild/output/src820201576/src/awsprintapp/node_modules/watchpack/node_modules/fsevents/build'
+2020-03-28T10:36:50.657Z [INFO]: SOLINK_MODULE(target) Release/obj.target/.node
+2020-03-28T10:36:50.701Z [INFO]: COPY Release/.node
+2020-03-28T10:36:50.707Z [INFO]: make: Leaving directory `/codebuild/output/src820201576/src/awsprintapp/node_modules/watchpack/node_modules/fsevents/build'
+2020-03-28T10:36:50.708Z [WARNING]: gyp
+2020-03-28T10:36:50.708Z [WARNING]: info ok
+2020-03-28T10:36:50.927Z [INFO]: > node-sass@4.13.1 install /codebuild/output/src820201576/src/awsprintapp/node_modules/node-sass
+                                 > node scripts/install.js
+2020-03-28T10:36:52.040Z [INFO]: Downloading binary from https://github.com/sass/node-sass/releases/download/v4.13.1/linux-x64-64_binding.node
+2020-03-28T10:36:53.090Z [INFO]: Download complete
+2020-03-28T10:36:53.093Z [INFO]: Binary saved to /codebuild/output/src820201576/src/awsprintapp/node_modules/node-sass/vendor/linux-x64-64/binding.node
+2020-03-28T10:36:53.131Z [INFO]: > node-sass@4.13.1 postinstall /codebuild/output/src820201576/src/awsprintapp/node_modules/node-sass
+                                 > node scripts/build.js
+2020-03-28T10:36:53.283Z [INFO]: Binary found at /codebuild/output/src820201576/src/awsprintapp/node_modules/node-sass/vendor/linux-x64-64/binding.node
+2020-03-28T10:36:53.283Z [INFO]: Testing binary
+2020-03-28T10:36:53.387Z [INFO]: Binary is fine
+2020-03-28T10:36:53.466Z [INFO]: > core-js@3.6.4 postinstall /codebuild/output/src820201576/src/awsprintapp/node_modules/global-agent/node_modules/core-js
+                                 > node -e "try{require('./postinstall')}catch(e){}"
+2020-03-28T10:36:53.599Z [INFO]: added 1679 packages in 19.983s
+2020-03-28T10:36:53.614Z [INFO]: # Executing command: eslint --fix ./
+2020-03-28T10:36:55.263Z [INFO]: # Completed phase: preBuild
+                                 # Starting phase: build
+2020-03-28T10:36:55.264Z [INFO]: # Executing command: quasar build -m pwa
+2020-03-28T10:36:55.395Z [INFO]: Build mode........ pwa
+                                 Pkg quasar........ v1.9.11
+                                 Pkg @quasar/app... v1.6.0
+                                 Debugging......... no
+                                 Publishing........ no
+2020-03-28T10:36:55.667Z [INFO]: app:quasar-conf Reading quasar.conf.js +0ms
+2020-03-28T10:36:56.409Z [INFO]: app:workbox [GenerateSW] Will generate a service-worker file. Ignoring your custom written one. +741ms
+2020-03-28T10:36:56.441Z [INFO]: app:webpack Extending PWA Webpack config +33ms
+2020-03-28T10:36:56.529Z [INFO]: app:artifacts Cleaned build artifact: "/codebuild/output/src820201576/src/awsprintapp/dist/pwa" +88ms
+2020-03-28T10:36:56.530Z [INFO]: app:generator Generating Webpack entry point +0ms
+2020-03-28T10:36:56.532Z [INFO]: app:build Building... +3ms
+2020-03-28T10:36:56.712Z [INFO]: app:progress Compiling PWA... +180ms
+2020-03-28T10:37:25.898Z [INFO]: app:progress Compiled PWA in ~29s +29s
+2020-03-28T10:37:25.900Z [INFO]: app:artifacts Added build artifact "/codebuild/output/src820201576/src/awsprintapp/dist/pwa" +0ms
+2020-03-28T10:37:25.908Z [INFO]: Version: webpack [1m4.41.6[39m[22m
+                                 Time: [1m29192[39m[22mms
+                                 Built at: 03/28/2020 [1m10:37:25 AM[39m[22m
+                                 [1mAsset[39m[22m       [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m                       [1m[39m[22m[1mChunk Names[39m[22m
+                                 [1m[32mcss/3.72bfc048.css[39m[22m  807 bytes       [1m3[39m[22m  [1m[32m[emitted] [immutable][39m[22m
+                                 [1m[32mcss/4.386170e2.css[39m[22m  654 bytes       [1m4[39m[22m  [1m[32m[emitted] [immutable][39m[22m
+                                 [1m[32mcss/app.e02911f4.css[39m[22m    191 KiB       [1m2[39m[22m  [1m[32m[emitted] [immutable][39m[22m  app
+                                 [1m[32mfonts/KFOkCnqEu92Fr1MmgVxIIzQ.5cb7edfc.woff[39m[22m   19.9 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mfonts/KFOlCnqEu92Fr1MmEU9fBBc-.87284894.woff[39m[22m     20 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mfonts/KFOlCnqEu92Fr1MmSU5fBBc-.b00849e0.woff[39m[22m   19.9 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mfonts/KFOlCnqEu92Fr1MmWUlfBBc-.adcde98f.woff[39m[22m   19.9 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mfonts/KFOlCnqEu92Fr1MmYUtfBBc-.bb1e4dc6.woff[39m[22m   19.9 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mfonts/KFOmCnqEu92Fr1Mu4mxM.60fa3c06.woff[39m[22m   19.8 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mfonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNa.29b882f0.woff[39m[22m   77.7 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mfonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.0509ab09.woff2[39m[22m   59.4 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mindex.html[39m[22m   2.06 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mjs/1.bf45d691.js[39m[22m   2.99 KiB       [1m1[39m[22m  [1m[32m[emitted] [immutable][39m[22m
+                                 [1m[32mjs/3.06930b7b.js[39m[22m   4.77 KiB       [1m3[39m[22m  [1m[32m[emitted] [immutable][39m[22m
+                                 [1m[32mjs/4.32909d7d.js[39m[22m   6.33 KiB       [1m4[39m[22m  [1m[32m[emitted] [immutable][39m[22m
+                                 [1m[32mjs/5.13b4d21d.js[39m[22m     12 KiB       [1m5[39m[22m  [1m[32m[emitted] [immutable][39m[22m
+                                 [1m[32mjs/6.09563cd0.js[39m[22m  584 bytes       [1m6[39m[22m  [1m[32m[emitted] [immutable][39m[22m
+                                 [1m[32mjs/app.4272ab6f.js[39m[22m   9.59 KiB       [1m2[39m[22m  [1m[32m[emitted] [immutable][39m[22m  app
+                                 [1m[32mjs/vendor.b6cba80f.js[39m[22m   4.27 MiB       [1m0[39m[22m  [1m[32m[emitted] [immutable][39m[22m  vendor
+                                 [1m[32mmanifest.json[39m[22m  607 bytes        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mprecache-manifest.abc7b575292cc9dee87e0f7d497ab2cb.js[39m[22m   3.63 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mservice-worker.js[39m[22m   1.04 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/app-logo-128x128.png[39m[22m   8.97 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/apple-icon-120x120.png[39m[22m   8.15 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/apple-icon-152x152.png[39m[22m   10.5 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/apple-icon-167x167.png[39m[22m   11.8 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/apple-icon-180x180.png[39m[22m   12.6 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/favicon-16x16.png[39m[22m  700 bytes        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/favicon-32x32.png[39m[22m   1.79 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/favicon-96x96.png[39m[22m   6.51 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/favicon.ico[39m[22m   5.12 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/icon-128x128.png[39m[22m   8.97 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/icon-192x192.png[39m[22m   13.5 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/icon-256x256.png[39m[22m   18.4 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/icon-384x384.png[39m[22m   28.2 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/icon-512x512.png[39m[22m     39 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/ms-icon-144x144.png[39m[22m   9.96 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 [1m[32mstatics/icons/safari-pinned-tab.svg[39m[22m   4.03 KiB        [1m[39m[22m  [1m[32m[emitted][39m[22m
+                                 Entrypoint [1mapp[39m[22m = [1m[32mjs/vendor.b6cba80f.js[39m[22m [1m[32mcss/app.e02911f4.css[39m[22m [1m[32mjs/app.4272ab6f.js[39m[22m
+2020-03-28T10:37:25.909Z [INFO]: Build succeeded
+                                 Build mode........ pwa
+                                 Pkg quasar........ v1.9.11
+                                 Pkg @quasar/app... v1.6.0
+                                 Debugging......... no
+                                 Publishing........ no
+                                 ==================
+                                 Output folder..... /codebuild/output/src820201576/src/awsprintapp/dist/pwa
+                                 Tip: Built files are meant to be served over an HTTP server
+                                 Opening index.html over file:// won't work
+                                 Tip: You can use "$ quasar serve" command to create a web server,
+                                 both for testing or production. Type "$ quasar serve -h" for
+                                 parameters. Also, an npm script (usually named "start") can
+                                 be added for deployment environments.
+                                 If you're using Vue Router "history" mode, don't forget to
+                                 specify the "--history" parameter: "$ quasar serve --history"
+2020-03-28T10:37:26.697Z [INFO]: # Completed phase: build
+2020-03-28T10:37:26.698Z [INFO]: ## Build completed successfully
+2020-03-28T10:37:26.699Z [INFO]: # Starting caching...
+2020-03-28T10:37:26.801Z [INFO]: Creating cache artifact...
+2020-03-28T10:37:39.248Z [INFO]: # Cache artifact is: 342MB
+2020-03-28T10:37:39.399Z [INFO]: # Uploading cache artifact...
+2020-03-28T10:37:43.396Z [INFO]: # Caching completed
+2020-03-28T10:37:43.530Z [INFO]: # Starting build artifact upload process...
+2020-03-28T10:37:43.763Z [INFO]: # Build artifact is: 2MB
+2020-03-28T10:37:43.763Z [INFO]: # Uploading build artifact '__artifacts.zip'...
+2020-03-28T10:37:43.780Z [INFO]: # Build artifact is: 2MB
+2020-03-28T10:37:43.780Z [INFO]: # Uploading build artifact '__artifactsHash.zip'...
+2020-03-28T10:37:43.937Z [INFO]: # Build artifact upload completed
+2020-03-28T10:37:43.937Z [INFO]: # Starting environment caching...
+2020-03-28T10:37:43.937Z [INFO]: # Environment caching completed
+Terminating logging...
+# Starting phase: build
+                                 # Executing command: amplifyPush --simple
+2020-03-28T10:35:11.993Z [INFO]: 
+2020-03-28T10:35:11.994Z [INFO]: For more information on AWS Profiles, see:
+                                 https://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html
+2020-03-28T10:35:12.560Z [INFO]: Amplify AppID found: d1y42miujhcidi. Amplify App name is: awsprintapp
+2020-03-28T10:35:12.736Z [INFO]: Backend environment dev found in Amplify Console app: awsprintapp
+2020-03-28T10:35:12.999Z [INFO]: 
+2020-03-28T10:35:13.828Z [INFO]: Note: It is recommended to run this command from the root of your app directory
+2020-03-28T10:35:17.838Z [WARNING]: - Initializing your environment: dev
+2020-03-28T10:35:18.195Z [WARNING]: ✔ Initialized provider successfully.
+2020-03-28T10:35:18.572Z [INFO]: GraphQL schema compiled successfully.
+                                 Edit your schema at /codebuild/output/src820201576/src/awsprintapp/amplify/backend/api/quasarPrint/schema.graphql or place .graphql files in a directory at /codebuild/output/src820201576/src/awsprintapp/amplify/backend/api/quasarPrint/schema
+2020-03-28T10:35:20.017Z [WARNING]: - Updating resources in the cloud. This may take a few minutes...
+2020-03-28T10:35:25.635Z [INFO]: 
+2020-03-28T10:35:25.639Z [INFO]: UPDATE_IN_PROGRESS amplify-quasar-print-dev-104319 AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:20 GMT+0000 (Coordinated Universal Time) User Initiated
+                                 UPDATE_IN_PROGRESS hostingS3AndCloudFront          AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:23 GMT+0000 (Coordinated Universal Time)
+                                 UPDATE_IN_PROGRESS authquasarprint35a0907e         AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:23 GMT+0000 (Coordinated Universal Time)
+                                 UPDATE_COMPLETE    hostingS3AndCloudFront          AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:23 GMT+0000 (Coordinated Universal Time)
+                                 UPDATE_COMPLETE    authquasarprint35a0907e         AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:24 GMT+0000 (Coordinated Universal Time)
+2020-03-28T10:35:30.570Z [INFO]: 
+2020-03-28T10:35:30.571Z [INFO]: UPDATE_IN_PROGRESS apiquasarPrint AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:25 GMT+0000 (Coordinated Universal Time)
+2020-03-28T10:35:30.673Z [INFO]: 
+2020-03-28T10:35:30.674Z [INFO]: UPDATE_IN_PROGRESS amplify-quasar-print-dev-104319-apiquasarPrint-13EU6MVSQVFUU AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:26 GMT+0000 (Coordinated Universal Time) User Initiated
+2020-03-28T10:35:35.823Z [INFO]: 
+2020-03-28T10:35:35.825Z [INFO]: UPDATE_IN_PROGRESS Todo            AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:31 GMT+0000 (Coordinated Universal Time)
+                                 UPDATE_COMPLETE    Todo            AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:32 GMT+0000 (Coordinated Universal Time)
+                                 UPDATE_IN_PROGRESS SearchableStack AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:35 GMT+0000 (Coordinated Universal Time)
+2020-03-28T10:35:40.676Z [INFO]: 
+2020-03-28T10:35:40.677Z [INFO]: UPDATE_COMPLETE    SearchableStack     AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:36 GMT+0000 (Coordinated Universal Time)
+                                 UPDATE_IN_PROGRESS CustomResourcesjson AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:39 GMT+0000 (Coordinated Universal Time)
+                                 UPDATE_COMPLETE    CustomResourcesjson AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:39 GMT+0000 (Coordinated Universal Time)
+2020-03-28T10:35:45.674Z [INFO]: 
+2020-03-28T10:35:45.677Z [INFO]: UPDATE_COMPLETE_CLEANUP_IN_PROGRESS amplify-quasar-print-dev-104319-apiquasarPrint-13EU6MVSQVFUU AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:42 GMT+0000 (Coordinated Universal Time)
+2020-03-28T10:35:50.570Z [INFO]: 
+2020-03-28T10:35:50.571Z [INFO]: UPDATE_COMPLETE                     apiquasarPrint                  AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:48 GMT+0000 (Coordinated Universal Time)
+                                 UPDATE_COMPLETE_CLEANUP_IN_PROGRESS amplify-quasar-print-dev-104319 AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:49 GMT+0000 (Coordinated Universal Time)
+2020-03-28T10:35:55.582Z [INFO]: 
+2020-03-28T10:35:55.583Z [INFO]: UPDATE_COMPLETE hostingS3AndCloudFront AWS::CloudFormation::Stack Sat Mar 28 2020 10:35:50 GMT+0000 (Coordinated Universal Time)
+2020-03-28T10:36:05.584Z [INFO]: 
+2020-03-28T10:36:05.587Z [INFO]: UPDATE_COMPLETE apiquasarPrint                  AWS::CloudFormation::Stack Sat Mar 28 2020 10:36:01 GMT+0000 (Coordinated Universal Time)
+                                 UPDATE_COMPLETE authquasarprint35a0907e         AWS::CloudFormation::Stack Sat Mar 28 2020 10:36:02 GMT+0000 (Coordinated Universal Time)
+                                 UPDATE_COMPLETE amplify-quasar-print-dev-104319 AWS::CloudFormation::Stack Sat Mar 28 2020 10:36:02 GMT+0000 (Coordinated Universal Time)
+2020-03-28T10:36:21.038Z [WARNING]: ✔ All resources are updated in the cloud
+2020-03-28T10:36:21.039Z [INFO]: 
+2020-03-28T10:36:21.041Z [INFO]: GraphQL endpoint: https://gkosvyyfmfhvnfw6ad6rrpkzta.appsync-api.eu-central-1.amazonaws.com/graphql
+2020-03-28T10:36:21.042Z [INFO]: Hosting endpoint: https://d1qgx38fpn45jx.cloudfront.net
+2020-03-28T10:36:21.111Z [INFO]: Initialized your environment successfully.
+2020-03-28T10:36:21.112Z [INFO]: Your project has been successfully initialized and connected to the cloud!
+                                 Some next steps:
+                                 "amplify status" will show you what you've added already and if it's locally configured or deployed
+                                 "amplify add <category>" will allow you to add features like user login or a backend API
+                                 "amplify push" will build all your local backend resources and provision it in the cloud
+                                 “amplify console” to open the Amplify Console and view your project status
+                                 "amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
+                                 Pro tip:
+                                 Try "amplify add api" to create a backend API and then "amplify publish" to deploy everything
+2020-03-28T10:36:21.128Z [INFO]: # Completed phase: build
