@@ -42,6 +42,18 @@
         </div>
 
         <div v-if="isLoggedIn">
+          <q-item clickable :to="{name: 'calc'}">
+            <q-item-section avatar>
+              <q-icon name="dialpad"/>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Kalkulator</q-item-label>
+              <q-item-label caption>pocitani nakladu</q-item-label>
+            </q-item-section>
+          </q-item>
+        </div>
+
+        <div v-if="isLoggedIn">
           <q-item clickable @click="signOut">
             <q-item-section avatar>
               <q-icon name="stop"/>

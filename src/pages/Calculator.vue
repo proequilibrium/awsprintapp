@@ -16,7 +16,7 @@
         <q-toggle v-model="pdfInput" label="Mam pdf k dispozici" />
         <div v-show="pdfInput">
           <q-uploader
-            url="http://localhost:8080/upload/"
+            url="http://localhost:8088/upload/"
             label="Omezeno na PDF"
             multiple
             style="max-width: 600px"
