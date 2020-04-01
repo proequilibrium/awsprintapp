@@ -63,7 +63,7 @@ module.exports = function (ctx) {
     build: {
       vueRouterMode: 'hash', // available values:'hash','history'
 
-      // rtl: false, // https://quasar.dev/options/rtl-support
+      // rtl: false, // https://quasar.dev/options/rtl-support//quasar.dev/options/rtl-support
       // showProgress: false,
       // gzip: true,
       // analyze: true,
@@ -114,7 +114,7 @@ module.exports = function (ctx) {
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
-        theme_color: '#027be3',
+        theme_color: 'info',
         icons: [
           {
             src: 'statics/icons/icon-128x128.png',

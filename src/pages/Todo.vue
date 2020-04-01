@@ -67,7 +67,7 @@
                   @click="toggleComplete(todo)"
                   class="text button"
                 >{{ todo.completed ? 'hotovo' : 'rozdelano' }}</q-btn>
-                    <q-btn style="background: #FF0080; color: white" label="Smazat zaznam"  @click="deleteTodo(todo)" class="text button delete" />
+                    <q-btn style="background: pinkbtn; color: white" label="Smazat zaznam"  @click="deleteTodo(todo)" class="text button delete" />
              </q-card>
           </li>
         </ul>
@@ -234,7 +234,7 @@ export default {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background-color: #f3218a;
+  background-color: pinkbtn;
   border: none;
   color: white;
   outline: none;
