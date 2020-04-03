@@ -13,7 +13,7 @@
           filled
           color="teal"
           dense
-          label="Jmeno"
+          label="Kseft"
           clearable
           lazy-rules
           :rules="[ val => val && val.length > 0 || 'Neni jmeno']"
@@ -236,7 +236,7 @@ export default {
   margin-top: 10px;
   background-color: pinkbtn;
   border: none;
-  color: white;
+  color: rgb(131, 88, 231);
   outline: none;
 }
 .button {

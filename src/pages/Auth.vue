@@ -5,7 +5,7 @@
     <div class="row justify-end">
       <q-btn @click="toggle" type="submit" class="authButton">
         {{ formState === 'signUp' ?
-        'Already signed up? Sign In' : 'Need an account? Sign Up'
+        'Ucet mam potrebuji se prihlasit' : 'Protrebuju ucet'
         }}
       </q-btn>
     </div>
@@ -22,7 +22,7 @@ export default {
   },
   data () {
     return {
-      formState: 'signUp'
+      formState: 'signIn'
     }
   },
   methods: {

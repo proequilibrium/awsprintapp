@@ -1,9 +1,9 @@
 <template>
   <div class="auth">
-    <h2>Sign In</h2>
+    <h2>Prihlaseni</h2>
     <form @submit.prevent="signIn">
-      <q-input square filled color="teal" label="Username" v-model="form.username"/>
-      <q-input square filled color="teal" label="Password" type="password" v-model="form.password"/>
+      <q-input square filled color="teal" label="Jmeno" v-model="form.username"/>
+      <q-input square filled color="teal" label="Heslo" type="password" v-model="form.password"/>
       <div class="row">
         <q-btn type="submit" @click="signIn" label="Prihlasit" class="authButton">
           <template v-slot:loading>

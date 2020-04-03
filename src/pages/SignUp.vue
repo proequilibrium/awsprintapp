@@ -1,9 +1,9 @@
 <template>
   <div class="auth">
-    <h2>{{ formState === 'signUp' ? 'Sign Up' : 'Confirm Sign Up' }}</h2>
+    <h2>{{ formState === 'signUp' ? 'Registrace' : 'Potvrzeni registrace' }}</h2>
     <form @submit.prevent="signUp">
       <div v-if="formState === 'signUp'">
-        <q-input square filled color="teal" label="Username" v-model="form.username"/>
+        <q-input square filled color="teal" label="Jmeno" v-model="form.username"/>
         <q-input
           square
           filled
@@ -14,7 +14,7 @@
         />
         <q-input square filled color="teal" label="E-mail" v-model="form.email"/>
         <div class="row">
-          <q-btn type="submit" @click="signUp" label="Sign Up" class="authButton">
+          <q-btn type="submit" @click="signUp" label="Registrovat" class="authButton">
             <template v-slot:loading>
               <q-spinner-facebook/>
             </template>
