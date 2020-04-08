@@ -41,6 +41,7 @@ module.exports = function (ctx) {
 
       components: [
         'QBtn',
+        'QImg',
         'QInput',
         'QDate',
         'QTime',
@@ -49,6 +50,8 @@ module.exports = function (ctx) {
         'QCard',
         'QCardSection',
         'QCardActions',
+        'QToggle',
+        'QUploader'
       ],
       directives: [],
 

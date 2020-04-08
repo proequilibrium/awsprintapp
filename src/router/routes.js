@@ -22,7 +22,7 @@ const routes = [
         name: 'auth',
         component: () => import('pages/Auth.vue'),
         meta: {
-          requiresAuth: false
+          requiresAuth: true
         }
       }
     ]
@@ -50,7 +50,21 @@ const routes = [
         path: '',
         component: () => import('pages/Calculator.vue'),
         meta: {
-          requiresAuth: false
+          requiresAuth: true
+        }
+      }
+    ]
+  },
+  {
+    path: '/fileupload',
+    component: () => import('layouts/MyLayout.vue'),
+    children: [
+      {
+        name: 'fileup',
+        path: '',
+        component: () => import('pages/FileUpload.vue'),
+        meta: {
+          requiresAuth: true
         }
       }
     ]

@@ -7,7 +7,7 @@
       >
     </p>
     <p class="text-faded">
-      Sorry, nothing here...<strong>(404)</strong>
+      Hele tady nic neni.<strong>(404)</strong>
     </p>
     <q-btn
       color="secondary"

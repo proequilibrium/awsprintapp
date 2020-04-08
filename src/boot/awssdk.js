@@ -1,0 +1,1 @@
+import aws-sdk from 'aws-sdk'

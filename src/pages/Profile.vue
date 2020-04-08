@@ -2,8 +2,8 @@
   <div>
     <h3>Ucet, </h3>
     <div>Email: {{user.attributes.email}}</div>
-    <div>S3 jmeno bucketu: {{$S3bucketname}}</div>
-    <div>S3 connection: {{$S3conn}}</div>
+    <div>Code: {{user.username}}</div>
+    <div>S3 jmeno bucketu: {{$S3storage}}</div>
   </div>
 </template>
 <script>

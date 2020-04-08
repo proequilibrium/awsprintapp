@@ -1,0 +1,55 @@
+"config": {
+    "credentials": null,
+    "credentialProvider": null,
+    "region": "us-east-1",
+    "logger": null,
+    "apiVersions": {},
+    "apiVersion": null,
+    "endpoint": "s3.amazonaws.com",
+    "httpOptions": {
+        "timeout": 120000
+    },
+    "maxRedirects": 10,
+    "paramValidation": true,
+    "sslEnabled": true,
+    "s3ForcePathStyle": false,
+    "s3BucketEndpoint": false,
+    "s3DisableBodySigning": true,
+    "computeChecksums": true,
+    "convertResponseTypes": true,
+    "correctClockSkew": false,
+    "customUserAgent": "aws-amplify/2.2.6 js",
+    "dynamoDbCrc32": true,
+    "systemClockOffset": 0,
+    "signatureVersion": "s3",
+    "signatureCache": true,
+    "retryDelayOptions": {},
+    "useAccelerateEndpoint": false,
+    "clientSideMonitoring": false,
+    "endpointDiscoveryEnabled": false,
+    "endpointCacheSize": 1000,
+    "hostPrefixEnabled": true,
+    "params": {
+        "Bucket": "quasar-print-20200327111617-hostingbucket-dev"
+    }
+},
+"isGlobalEndpoint": false,
+"endpoint": {
+    "protocol": "https:",
+    "host": "s3.amazonaws.com",
+    "port": 443,
+    "hostname": "s3.amazonaws.com",
+    "pathname": "/",
+    "path": "/",
+    "href": "https://s3.amazonaws.com/"
+},
+"_events": {
+    "apiCallAttempt": [
+        null
+    ],
+    "apiCall": [
+        null
+    ]
+},
+"_clientId": 1
+}

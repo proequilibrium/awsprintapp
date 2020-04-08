@@ -54,6 +54,18 @@
         </div>
 
         <div v-if="isLoggedIn">
+          <q-item clickable :to="{name: 'fileup'}">
+            <q-item-section avatar>
+              <q-icon name="file_copy"/>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Nahravac</q-item-label>
+              <q-item-label caption>Nahravani souboru</q-item-label>
+            </q-item-section>
+          </q-item>
+        </div>
+
+        <div v-if="isLoggedIn">
           <q-item clickable @click="signOut">
             <q-item-section avatar>
               <q-icon name="stop"/>

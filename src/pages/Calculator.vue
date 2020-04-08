@@ -16,9 +16,8 @@
         <q-toggle v-model="pdfInput" label="Mam pdf k dispozici" />
         <div v-show="pdfInput">
           <q-uploader
-            url="http://localhost:8088/upload/"
-            label="Omezeno na PDF"
-            multiple
+            label="Nahrat PDF"
+            :factory="uploadFile"
             style="max-width: 600px"
           />
         </div>
@@ -50,7 +49,7 @@
             </q-card-section>
           </q-card>
       </div>
-    <example1 />
+
   </q-page>
 </template>
 
@@ -65,7 +64,7 @@ export default {
   name: 'PageIndex',
 
   components: {
-    example1: () => import('../components/Example1')
+    // example1: () => import('../components/Example1')
   },
 
   data () {
@@ -114,6 +113,43 @@ export default {
         arcPrintCosts = 2 * arcPrintCosts
       }
       return ((this.numArc * arcPrintCosts) + parseInt(this.prePressCost))
+    },
+    listObjs () {
+      var prefix = 'testing'
+      this.S3conn.listObjects({
+        Prefix: prefix
+      }, function (err, data) {
+        if (err) {
+          console.log('ERROR: ' + err)
+        } else {
+          var objKeys = ''
+          data.Contents.forEach(function (obj) {
+            objKeys += obj.Key + '<br>'
+          })
+          console.log('Nahrany objekty')
+          console.log(objKeys)
+        }
+      })
+    },
+    uploadFile (file) {
+      if (file) {
+        var objKey = 'testing/' + file.name
+        var params = {
+          Key: objKey,
+          ContentType: file.type,
+          Body: file,
+          ACL: 'public-read'
+        }
+        this.$S3conn.putObject(params, function (err, data) {
+          if (err) {
+            console.log('ERROR: ' + err)
+          } else {
+            this.listObjs()
+          }
+        })
+      } else {
+        console.log('nemam soubor')
+      }
     }
   },
   computed: {
