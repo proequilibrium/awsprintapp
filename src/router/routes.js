@@ -68,6 +68,20 @@ const routes = [
         }
       }
     ]
+  },
+  {
+    path: '/imgedit',
+    component: () => import('layouts/MyLayout.vue'),
+    children: [
+      {
+        name: 'CropPage',
+        path: '',
+        component: () => import('pages/CropPage.vue'),
+        meta: {
+          requiresAuth: true
+        }
+      }
+    ]
   }
 ]
 // Always leave this as last one

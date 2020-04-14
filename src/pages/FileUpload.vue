@@ -13,6 +13,7 @@
         />
     </div>
      <q-btn type="submit" @click="filup" label="Uloz" class="q-mt-md" color="teal" />
+     <q-select standout @input="selectionAdded" v-model="model" :options="options" label="Standout" />
      <q-btn type="submit" @click="fildown" label="Nahraj" class="q-mt-md" color="teal" />
      <q-btn type="submit" @click="listfiles" label="List" class="q-mt-md" color="teal" />
      <q-img ref='mainimage' :src="imgsource" />
@@ -26,12 +27,21 @@ export default {
   name: 'FileUp',
   data () {
     return {
+      model: null,
+      options: [],
       imgsource: 'https://www.parma.cz/katalog-obrazku/clanek-363/detail-3008-tatra-traktor-8x6-s-pevnou-nastavbou-fliegl.jpg'
     }
   },
   methods: {
+    setKeys (fileList) {
+      var fileNames = []
+      fileList.forEach(element => {
+        fileNames.push(element.key)
+      })
+      this.options = fileNames
+    },
     listfiles () {
-      this.$Storage.list('protected/').then(result => console.log(result)).catch(err => console.log(err))
+      this.$Storage.list('').then(result => this.setKeys(result)).catch(err => console.log(err))
     },
     filup () {
       this.$Storage.put('textik_file.txt', 'Ty pico fakci to', {
@@ -75,12 +85,17 @@ export default {
       var fileA = file[0]
       console.log(fileA.__img.attributes.src.baseURI, '\n')
       console.log(fileA.__img)
+      console.log(fileA)
 
-      this.$Storage.put('srdce.png', fileA, {
+      this.$Storage.put(fileA.name, fileA, {
         contentType: 'application/octet-stream'
       })
         .then(result => console.log(result))
         .catch(err => console.log(err))
+    },
+    selectionAdded (details) {
+      console.log(details)
+      this.$Storage.get(details).then(result => { this.$refs.mainimage.src = result }).catch(err => console.log(err))
     }
   }
 }

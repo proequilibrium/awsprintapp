@@ -63,10 +63,6 @@
 export default {
   name: 'PageIndex',
 
-  components: {
-    // example1: () => import('../components/Example1')
-  },
-
   data () {
     return {
       doubleSide: false,
@@ -185,7 +181,10 @@ export default {
       this.setPaperFromString(this.format)
       return this.sheetSizeInMeters * this.paperWeight * this.kgPrice / 1000
     }
+  },
+  components: {
+    // 'lazy-calc': require('vue-lazy-calc').default
+    // example1: () => import('../components/Example1')
   }
-
 }
 </script>

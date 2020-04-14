@@ -19,15 +19,17 @@
       <q-list>
         <q-item-label header>Dashboard</q-item-label>
 
-        <q-item clickable :to="{name: 'todo'}">
-          <q-item-section avatar>
-            <q-icon name="note"/>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Udelat</q-item-label>
-            <q-item-label caption>vytvori list uloh</q-item-label>
-          </q-item-section>
-        </q-item>
+        <div v-if="isLoggedIn">
+          <q-item clickable :to="{name: 'todo'}">
+            <q-item-section avatar>
+              <q-icon name="note"/>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Udelat</q-item-label>
+              <q-item-label caption>vytvori list uloh</q-item-label>
+            </q-item-section>
+          </q-item>
+        </div>
 
         <div v-if="isLoggedIn">
           <q-item clickable :to="{name: 'profile'}">
@@ -61,6 +63,18 @@
             <q-item-section>
               <q-item-label>Nahravac</q-item-label>
               <q-item-label caption>Nahravani souboru</q-item-label>
+            </q-item-section>
+          </q-item>
+        </div>
+
+        <div v-if="isLoggedIn">
+          <q-item clickable :to="{name: 'CropPage'}">
+            <q-item-section avatar>
+              <q-icon name="picture_in_picture"/>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Retuse</q-item-label>
+              <q-item-label caption>manipulace s obrazky</q-item-label>
             </q-item-section>
           </q-item>
         </div>
