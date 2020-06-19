@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"quasardemonewfd941e0d": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}
