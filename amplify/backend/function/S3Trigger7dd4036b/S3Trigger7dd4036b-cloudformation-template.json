@@ -59,7 +59,7 @@
 				"Runtime": "nodejs10.x",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "amplify-quasar-print-dev-104319-deployment",
+					"S3Bucket": "amplify-quasar-print-devel-83216-deployment",
 					"S3Key": "amplify-builds/S3Trigger7dd4036b-2f6b3931355239346153-build.zip"
 				}
 			}

@@ -16,5 +16,26 @@
                 "quasarprint35a0907e": {}
             }
         }
+    },
+    "devel": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-quasar-print-devel-83216-authRole",
+            "UnauthRoleArn": "arn:aws:iam::736377902381:role/amplify-quasar-print-devel-83216-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::736377902381:role/amplify-quasar-print-devel-83216-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "amplify-quasar-print-devel-83216-deployment",
+            "UnauthRoleName": "amplify-quasar-print-devel-83216-unauthRole",
+            "StackName": "amplify-quasar-print-devel-83216",
+            "StackId": "arn:aws:cloudformation:eu-central-1:736377902381:stack/amplify-quasar-print-devel-83216/38320c90-b51b-11ea-be23-0a64b3109ac6",
+            "AmplifyAppId": "d2h3t6a5ga65yc"
+        },
+        "categories": {
+            "auth": {
+                "quasarprint35a0907e": {}
+            },
+            "function": {
+                "S3Trigger7dd4036b": {}
+            }
+        }
     }
 }
