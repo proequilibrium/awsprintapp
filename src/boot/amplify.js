@@ -20,12 +20,10 @@ export default async ({ router, Vue }) => {
 
   router.beforeResolve((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
-      // eslint-disable-next-line no-unused-vars
-      let user
       Vue.prototype.$Amplify.Auth.currentAuthenticatedUser()
         .then(data => {
           if (data && data.signInUserSession) {
-            user = data
+            next()
           }
           next()
         })
