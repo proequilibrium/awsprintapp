@@ -134,6 +134,7 @@ export default {
   beforeCreate () {
     this.$Auth.currentAuthenticatedUser()
       .then(user => {
+        console.log('MyLayout---', user)
         this.user = user
         this.signedIn = true
       })
@@ -146,7 +147,7 @@ export default {
     async signOut () {
       await this.$Auth.signOut()
         .then(data => console.log(data))
-        .catch(err => console.log(err))
+        .catch(err => console.log('ERROR', err))
       this.signedIn = false
       parent.signedIn = false
       this.$router.push({ name: 'auth' })

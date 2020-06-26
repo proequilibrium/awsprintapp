@@ -21,13 +21,12 @@ export default async ({ router, Vue }) => {
   router.beforeResolve((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
       // eslint-disable-next-line no-unused-vars
-      // let user
+      let user
       Vue.prototype.$Amplify.Auth.currentAuthenticatedUser()
         .then(data => {
           if (data && data.signInUserSession) {
-            // user = data
-            // just for fix problem with eslint
-            // console.log(user.aws_cognito_identity_pool_id)
+            user = data
+            console.log(user)
           }
           next()
         })
