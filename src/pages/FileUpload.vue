@@ -29,6 +29,7 @@ export default {
     return {
       model: null,
       options: [],
+      Storage_Link: this.$Storage,
       imgsource: 'https://www.parma.cz/katalog-obrazku/clanek-363/detail-3008-tatra-traktor-8x6-s-pevnou-nastavbou-fliegl.jpg'
     }
   },

@@ -5,7 +5,7 @@ import AwsExports from '../aws-exports'
 Amplify.configure(AwsExports)
 
 Storage.configure({
-  bucket: 'quasar-print-20200327111617-hostingbucket-dev',
+  bucket: 'quasar-print1478936768d2438eb3ba893423805d08devel-devel',
   level: 'protected',
   region: 'eu-central-1',
   identityPoolId: AwsExports.aws_cognito_identity_pool_id
