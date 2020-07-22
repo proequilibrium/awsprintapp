@@ -25,7 +25,7 @@ export default {
       model: null,
       options: [],
       Storage_Link: this.$Storage,
-      imgsource: 'https://commons.wikimedia.org/wiki/File:Don%27t_let_go.jpg',
+      imgsource: 'https://commons.wikimedia.org/wiki/File:Don%27t_let_go.jpg'
     }
   },
   methods: {
