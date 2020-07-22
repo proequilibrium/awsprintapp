@@ -1,7 +1,6 @@
 <template>
   <q-page padding>
     <div class="q-pa-md">
-        {{ up_progress }}
         <q-uploader
           ref="uploader"
           :multiple=false
@@ -27,7 +26,6 @@ export default {
       options: [],
       Storage_Link: this.$Storage,
       imgsource: 'https://commons.wikimedia.org/wiki/File:Don%27t_let_go.jpg',
-      up_progress: 0
     }
   },
   methods: {
