@@ -72,12 +72,23 @@ export default {
     factoryFn (file) {
       var fileA = file[0]
       var uploaderRef = this.$refs.uploader
-      return this.$Storage.put(fileA.name, fileA, {
-        headers: { contentType: 'application/octet-stream' },
-        progressCallback (progress) {
-          uploaderRef.uploadedSize = progress.loaded
-          console.log('Uploaded', progress.loaded / progress.total)
-        }
+      return new Promise((resolve, reject) => {
+        this.$Storage.put(fileA.name, fileA, {
+          headers: { contentType: 'application/octet-stream' },
+          progressCallback (progress) {
+            uploaderRef.uploadedSize = progress.loaded
+            if (progress.total !== progress.loaded) {
+              uploaderRef.__updateFile(fileA, 'uploading', uploaderRef.uploadedSize)
+            } else {
+              uploaderRef.__updateFile(fileA, 'uploaded')
+            }
+            console.log('Uploaded', progress.loaded / progress.total)
+          }
+        }).then((values) => {
+          console.log('Uploaded file')
+        }).catch((err) => {
+          console.log('ERROR', err)
+        })
       })
     },
     selectionAdded (details) {
