@@ -6,11 +6,4 @@ type Todo @model @searchable @auth(rules: [{ allow: owner }]) {
   description: String
   format: String
   completed: Boolean!
-  pdf: S3Object
-}
-
-input S3ObjectInput {
-  bucket: String!
-  region: String!
-  key: String!
 }
