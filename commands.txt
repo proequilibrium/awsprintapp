@@ -6,6 +6,7 @@ npm install --save graphql
 npm install --save graphql-tag
 npm install --save vue-apollo
 amplify init
+amplify add auth
 amplify add api
 amplify add hosting
 	prod
@@ -18,7 +19,7 @@ git commit -m "Initial commit"
 git remote add origin https://github.com/mfreeman451/quasar-amplify-demo.git
 git push origin master
 
---- configurace CI CD na mazon amplify
+--- configurace CI CD na amazon amplify
 
 quasar new boot amplify
 copy code --- 
@@ -33,3 +34,6 @@ quasar new p SignUp
 quasar new p SignIn
 
 quasar new boot appsync
+
+Build Command: quasar build -m pwa
+Start Command: quasar serve --history dist/pwa

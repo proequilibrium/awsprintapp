@@ -33,6 +33,19 @@
         />
 
         <q-input
+          type="text"
+          ref="format"
+          filled
+          color="teal"
+          dense
+          label="Format uzitku"
+          clearable
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Neni popis']"
+          v-model="format"
+        />
+
+        <q-input
           type="date"
           ref="date"
           filled
@@ -62,6 +75,7 @@
               >
                 <p class="todoname">{{ todo.name }}</p>
                 <p class="text">{{ todo.description }}</p>
+                <p class="text">{{ todo.format }}</p>
                 <p class="text">termin: {{ todo.date }}</p>
                 <q-btn
                   @click="toggleComplete(todo)"
@@ -96,6 +110,7 @@ export default {
     return {
       name: '',
       description: '',
+      format: '',
       owner: 'foo', // this is just a placeholder and will get updated by AppSync resolver
       user: '',
       todos: []
@@ -184,6 +199,7 @@ export default {
       const name = this.name
       const date = this.date
       const description = this.description
+      const format = this.format
       const owner = this.user.username
 
       const id = uuidV4()
@@ -193,6 +209,7 @@ export default {
         date,
         owner,
         description,
+        format,
         completed: false
       }
 
