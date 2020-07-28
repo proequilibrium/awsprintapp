@@ -9,7 +9,10 @@ export const onCreateTodo = /* GraphQL */ `
       owner
       date
       description
+      format
       completed
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -21,7 +24,10 @@ export const onUpdateTodo = /* GraphQL */ `
       owner
       date
       description
+      format
       completed
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -33,7 +39,10 @@ export const onDeleteTodo = /* GraphQL */ `
       owner
       date
       description
+      format
       completed
+      createdAt
+      updatedAt
     }
   }
 `;

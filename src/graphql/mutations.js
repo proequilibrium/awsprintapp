@@ -12,7 +12,10 @@ export const createTodo = /* GraphQL */ `
       owner
       date
       description
+      format
       completed
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -27,7 +30,10 @@ export const updateTodo = /* GraphQL */ `
       owner
       date
       description
+      format
       completed
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -42,7 +48,10 @@ export const deleteTodo = /* GraphQL */ `
       owner
       date
       description
+      format
       completed
+      createdAt
+      updatedAt
     }
   }
 `;

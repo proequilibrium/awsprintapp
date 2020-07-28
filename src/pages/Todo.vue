@@ -75,7 +75,7 @@
               >
                 <p class="todoname">{{ todo.name }}</p>
                 <p class="text">{{ todo.description }}</p>
-                <p class="text">{{ todo.format }}</p>
+                <p class="text">format: {{ todo.format }}</p>
                 <p class="text">termin: {{ todo.date }}</p>
                 <q-btn
                   @click="toggleComplete(todo)"

@@ -9,7 +9,10 @@ export const getTodo = /* GraphQL */ `
       owner
       date
       description
+      format
       completed
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -26,7 +29,10 @@ export const listTodos = /* GraphQL */ `
         owner
         date
         description
+        format
         completed
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -51,7 +57,10 @@ export const searchTodos = /* GraphQL */ `
         owner
         date
         description
+        format
         completed
+        createdAt
+        updatedAt
       }
       nextToken
       total
