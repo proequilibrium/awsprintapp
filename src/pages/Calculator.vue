@@ -168,7 +168,11 @@ export default {
       }
     },
     numArc: function () {
-      return Math.floor((this.pcs / this.onArc) * this.pages_num)
+      if (this.doubleSide) {
+        return Math.ceil((this.pcs / this.onArc) * this.pages_num / 2)
+      } else {
+        return Math.ceil((this.pcs / this.onArc) * this.pages_num)
+      }
     },
     sheetSizeInMeters: function () {
       if (this.format == null) {

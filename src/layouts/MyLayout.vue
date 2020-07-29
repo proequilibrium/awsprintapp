@@ -10,7 +10,7 @@
             <q-toolbar-title>PF APP</q-toolbar-title>
           </router-link>
 
-          <div class="fixed-right">Quasar v{{ $q.version }}</div>
+          <div class="fixed-right">Deployment 14 Quasar v{{ $q.version }}</div>
         </div>
       </q-toolbar>
     </q-header>
