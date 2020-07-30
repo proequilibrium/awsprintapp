@@ -41,7 +41,7 @@ export default {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background-color: #f3218a;
+  background-color: green;
   border: none;
   color: white;
   outline: none;
