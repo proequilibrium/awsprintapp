@@ -71,7 +71,7 @@
           <q-item clickable :to="{name: 'CropPage'}">
             <q-item-section avatar>
               <q-icon name="picture_in_picture"/>
-            </q-item-section>p
+            </q-item-section>
             <q-item-section>
               <q-item-label>Retuse</q-item-label>
               <q-item-label caption>manipulace s obrazky</q-item-label>

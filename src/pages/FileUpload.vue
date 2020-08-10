@@ -4,7 +4,7 @@
         <q-uploader
           ref="uploader"
           :multiple=false
-          :factory="factoryFn"
+          :factory="uploadMultipleFiles"
           style="max-width: 300px"
         />
     </div>
@@ -39,15 +39,8 @@ export default {
     listfiles () {
       this.$Storage.list('').then(result => this.setKeys(result)).catch(err => console.log(err))
     },
-    filup () {
-      this.$Storage.put('textik_file.txt', 'Ty pico fakci to', {
-        contentType: 'text/plain'
-      })
-        .then(result => console.log(result))
-        .catch(err => console.log(err))
-    },
     fildown () {
-      this.$Storage.get('srdce.png').then(result => { this.$refs.mainimage.src = result }).catch(err => console.log(err))
+      this.$Storage.get('hearth.png').then(result => { this.$refs.mainimage.src = result }).catch(err => console.log(err))
     },
     factTst (files) {
       return new Promise((resolve, reject) => {
@@ -69,27 +62,36 @@ export default {
     updateProgress (num) {
       this.up_progress = num
     },
-    factoryFn (file) {
-      var fileA = file[0]
-      var uploaderRef = this.$refs.uploader
-      return new Promise((resolve, reject) => {
-        this.$Storage.put(fileA.name, fileA, {
-          headers: { contentType: 'application/octet-stream' },
-          progressCallback (progress) {
-            uploaderRef.uploadedSize = progress.loaded
-            if (progress.total !== progress.loaded) {
-              uploaderRef.__updateFile(fileA, 'uploading', uploaderRef.uploadedSize)
-            } else {
-              uploaderRef.__updateFile(fileA, 'uploaded')
-            }
-            console.log('Uploaded', progress.loaded / progress.total)
+    oneFileUpload (file, uploaderRef) {
+      return this.$Storage.put(file.name, file, {
+        headers: { contentType: 'application/octet-stream' },
+        progressCallback (progress) {
+          uploaderRef.uploadedSize = progress.loaded
+          if (progress.total !== progress.loaded) {
+            console.log('uploading', uploaderRef.uploadedSize)
+            uploaderRef.__updateFile(file, 'uploading', uploaderRef.uploadedSize)
+          } else {
+            console.log('UPLOADED')
+            uploaderRef.__updateFile(file, 'uploaded')
           }
-        }).then((values) => {
-          console.log('Uploaded file')
-        }).catch((err) => {
-          console.log('ERROR', err)
-        })
+          console.log('Uploaded', progress.loaded / progress.total)
+        }
+      }).then((values) => {
+        console.log('Uploaded file')
+      }).catch((err) => {
+        console.log('ERROR:', err)
       })
+    },
+    uploadMultipleFiles (file) {
+      const promises = []
+
+      var uploaderRef = this.$refs.uploader
+
+      file.forEach(fileX => {
+        promises.push(this.oneFileUpload(fileX, uploaderRef))
+      })
+
+      return Promise.all(promises)
     },
     selectionAdded (details) {
       console.log(details)
