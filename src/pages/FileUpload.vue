@@ -3,7 +3,7 @@
     <div class="q-pa-md">
         <q-uploader
           ref="uploader"
-          :multiple=false
+          :multiple=true
           :factory="uploadMultipleFiles"
           style="max-width: 300px"
         />

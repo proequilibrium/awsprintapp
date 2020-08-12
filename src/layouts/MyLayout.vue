@@ -10,7 +10,7 @@
             <q-toolbar-title>PF APP</q-toolbar-title>
           </router-link>
 
-          <div class="fixed-right">Deployment 16 Quasar v{{ $q.version }}</div>
+          <div class="fixed-right">Deployment 18 Quasar v{{ $q.version }}</div>
         </div>
       </q-toolbar>
     </q-header>
@@ -111,8 +111,7 @@
 </template>
 
 <script>
-import { openURL } from 'quasar'
-export default {
+import { openURL } from 'quasar'false
   name: 'MyLayout',
   data () {
     return {
