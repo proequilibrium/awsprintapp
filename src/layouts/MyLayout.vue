@@ -111,7 +111,8 @@
 </template>
 
 <script>
-import { openURL } from 'quasar'false
+import { openURL } from 'quasar'
+export default {
   name: 'MyLayout',
   data () {
     return {
@@ -122,12 +123,12 @@ import { openURL } from 'quasar'false
   },
   computed: {
     isLoggedIn () {
-      return this.signedIn
+      return this.signedIn === 'signedIn'
     }
   },
   mounted () {
     this.$AmplifyEventBus.$on('authState', info => {
-      this.signedIn = true
+      this.signedIn = info
     })
   },
   beforeCreate () {

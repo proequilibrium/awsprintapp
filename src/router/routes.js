@@ -8,7 +8,7 @@ const routes = [
         name: 'todo',
         component: () => import('pages/Todo.vue'),
         meta: {
-          requiresAuth: false
+          requiresAuth: true
         }
       }
     ]

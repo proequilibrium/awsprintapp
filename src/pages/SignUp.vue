@@ -1,6 +1,6 @@
 <template>
   <div class="auth">
-    <h2>{{ formState === 'signUp' ? 'Registrace' : 'Potvrzeni registrace' }}</h2>
+    <h2>{{ formState === 'signUp' ? 'Registrace' : 'Potvrzeni registrace kodem z emailu' }}</h2>
     <form @submit.prevent="signUp">
       <div v-if="formState === 'signUp'">
         <q-input square filled color="teal" label="Jmeno" v-model="form.username"/>
@@ -49,16 +49,40 @@ export default {
     }
   },
   methods: {
-    async signUp () {
-      const { username, password, email } = this.form
-      await this.$Auth.signUp({
-        username, password, attributes: { email }
+    notifyIt (notifyTxt, notifyColor) {
+      this.$q.notify({
+        message: notifyTxt,
+        color: notifyColor
       })
-      this.formState = 'confirmSignUp'
+    },
+    async signUp () {
+      try {
+        const { username, password, email } = this.form
+        const { user } = await this.$Auth.signUp({
+          username,
+          password,
+          attributes: {
+            email
+          }
+        })
+        this.notifyIt('Registrovano ' + user.username, 'blue')
+        this.formState = 'confirmSignUp'
+        console.log(user)
+      } catch (error) {
+        this.notifyIt('Chyba registrace: ' + error.message, 'red')
+        console.log('error signing up: ', error)
+      }
     },
     async confirmSignUp () {
       const { username, authCode } = this.form
       await this.$Auth.confirmSignUp(username, authCode)
+        .then(
+          verifiedData =>
+            this.$q.notify({
+              message: 'Overovaci Kod zadan uspesne',
+              color: 'purple'
+            })
+        )
       this.toggle()
     }
   }
