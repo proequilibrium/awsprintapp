@@ -55,6 +55,7 @@ export default {
             console.log(reason)
           }
         )
+        .catch((err) => console.log('chycena chyba: ', err))
     }
   }
 }

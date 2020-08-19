@@ -14,7 +14,7 @@
         />
         <q-input square filled color="teal" label="E-mail" v-model="form.email"/>
         <div class="row">
-          <q-btn type="submit" @click="signUp" label="Registrovat" class="authButton">
+          <q-btn type="submit" label="Registrovat" class="authButton">
             <template v-slot:loading>
               <q-spinner-facebook/>
             </template>
@@ -70,7 +70,7 @@ export default {
         console.log(user)
       } catch (error) {
         this.notifyIt('Chyba registrace: ' + error.message, 'red')
-        console.log('error signing up: ', error)
+        console.log('Chyba registrace: ', error)
       }
     },
     async confirmSignUp () {
