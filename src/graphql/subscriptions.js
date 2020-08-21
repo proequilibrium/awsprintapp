@@ -10,9 +10,9 @@ export const onCreateTodo = /* GraphQL */ `
       date
       description
       format
+      price
       completed
-      createdAt
-      updatedAt
+      invoiced
     }
   }
 `;
@@ -25,9 +25,9 @@ export const onUpdateTodo = /* GraphQL */ `
       date
       description
       format
+      price
       completed
-      createdAt
-      updatedAt
+      invoiced
     }
   }
 `;
@@ -40,9 +40,9 @@ export const onDeleteTodo = /* GraphQL */ `
       date
       description
       format
+      price
       completed
-      createdAt
-      updatedAt
+      invoiced
     }
   }
 `;

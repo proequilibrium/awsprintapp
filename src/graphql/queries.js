@@ -10,9 +10,9 @@ export const getTodo = /* GraphQL */ `
       date
       description
       format
+      price
       completed
-      createdAt
-      updatedAt
+      invoiced
     }
   }
 `;
@@ -30,9 +30,9 @@ export const listTodos = /* GraphQL */ `
         date
         description
         format
+        price
         completed
-        createdAt
-        updatedAt
+        invoiced
       }
       nextToken
     }
@@ -58,9 +58,9 @@ export const searchTodos = /* GraphQL */ `
         date
         description
         format
+        price
         completed
-        createdAt
-        updatedAt
+        invoiced
       }
       nextToken
       total

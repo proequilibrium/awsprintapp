@@ -5,5 +5,7 @@ type Todo @model @searchable @auth(rules: [{ allow: owner }]) {
   date: AWSDate
   description: String
   format: String
+  price: Int
   completed: Boolean!
+  invoiced: Boolean!
 }

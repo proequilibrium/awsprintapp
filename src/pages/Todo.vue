@@ -134,13 +134,13 @@ export default {
         this.formHasError = true
         this.$q.notify({
           color: 'negative',
-          message: 'Missing form fields'
+          message: 'Chybi vyplnene hodnoty'
         })
       } else {
         this.$q.notify({
           icon: 'done',
           color: 'positive',
-          message: 'Submitted'
+          message: 'Pridano'
         })
         this.createTodo()
       }
@@ -210,7 +210,8 @@ export default {
         owner,
         description,
         format,
-        completed: false
+        completed: false,
+        invoiced: false
       }
 
       this.$apollo.mutate({

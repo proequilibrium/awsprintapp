@@ -13,9 +13,9 @@ export const createTodo = /* GraphQL */ `
       date
       description
       format
+      price
       completed
-      createdAt
-      updatedAt
+      invoiced
     }
   }
 `;
@@ -31,9 +31,9 @@ export const updateTodo = /* GraphQL */ `
       date
       description
       format
+      price
       completed
-      createdAt
-      updatedAt
+      invoiced
     }
   }
 `;
@@ -49,9 +49,9 @@ export const deleteTodo = /* GraphQL */ `
       date
       description
       format
+      price
       completed
-      createdAt
-      updatedAt
+      invoiced
     }
   }
 `;
