@@ -39,3 +39,16 @@ Build Command: quasar build -m pwa
 Start Command: quasar serve --history dist/pwa
 
 amplify codegen --- modifikuje graphql
+
+//**********************************************
+//************ PRIDANI DO DB *******************
+//**********************************************
+upravit soubor "amplify/backend/api/quasarPrint/schema.graphql"
+a pridat polozky co jsou potreba
+nasledne 
+amplify api gql-compile
+amplify push --- je potreba zmenit schema a prenastaveni
+	QraphQL --- Yes
+	This will overwrite ... --- Yes
+
+--- komplikace je ze pokud je novy sloupec vyzadovan tj ! tak je potreba ho do DB rucne nastavit

@@ -5,10 +5,10 @@ const routes = [
     children: [
       {
         path: '',
-        name: 'todo',
-        component: () => import('pages/Todo.vue'),
+        name: 'welcome',
+        component: () => import('pages/Welcome.vue'),
         meta: {
-          requiresAuth: true
+          requiresAuth: false
         }
       }
     ]
@@ -23,6 +23,20 @@ const routes = [
         component: () => import('pages/Auth.vue'),
         meta: {
           requiresAuth: false
+        }
+      }
+    ]
+  },
+  {
+    path: '/todo',
+    component: () => import('layouts/MyLayout.vue'),
+    children: [
+      {
+        name: 'todo',
+        path: '',
+        component: () => import('pages/Todo.vue'),
+        meta: {
+          requiresAuth: true
         }
       }
     ]

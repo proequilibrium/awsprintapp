@@ -39,6 +39,8 @@
               <div class="text-subtitle2">{{paperPriceTotal().toFixed(2)}}Kc</div>
               <div class="text-h6">Hmotnost archu je:</div>
               <div class="text-subtitle2">{{(sheetSizeInMeters * paperWeight).toFixed(2)}}g</div>
+              <div class="text-h6">Hmotnost zakazky je:</div>
+              <div class="text-subtitle2">{{(sheetSizeInMeters * paperWeight * numArc).toFixed(2)}}g</div>
               <div class="text-h6">Na arch se vejde:</div>
               <div class="text-subtitle2">{{(onArc).toFixed(0)}}ks</div>
               <div class="text-h6">Za tisk:</div>

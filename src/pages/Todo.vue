@@ -31,7 +31,6 @@
           :rules="[ val => val && val.length > 0 || 'Neni popis']"
           v-model="description"
         />
-
         <q-input
           type="text"
           ref="format"
@@ -44,7 +43,6 @@
           :rules="[ val => val && val.length > 0 || 'Neni popis']"
           v-model="format"
         />
-
         <q-input
           type="date"
           ref="date"
@@ -77,6 +75,7 @@
                 <p class="text">{{ todo.description }}</p>
                 <p class="text">format: {{ todo.format }}</p>
                 <p class="text">termin: {{ todo.date }}</p>
+                <p class="number">cena: {{ todo.price }}</p>
                 <q-btn
                   @click="toggleComplete(todo)"
                   class="text button"
@@ -108,11 +107,6 @@ export default {
   },
   data () {
     return {
-      name: '',
-      description: '',
-      format: '',
-      owner: 'foo', // this is just a placeholder and will get updated by AppSync resolver
-      user: '',
       todos: []
     }
   },
@@ -170,8 +164,8 @@ export default {
           }
         }
       })
-        .then(data => console.log(data))
-        .catch(error => console.error(error))
+        .then(data => console.log('Toggle_complete: ', data))
+        .catch(error => console.error('Toggle Problem: ', error))
     },
     deleteTodo (todo) {
       this.$apollo.mutate({
@@ -192,8 +186,8 @@ export default {
           }
         }
       })
-        .then(data => console.log(data))
-        .catch(error => console.error(error))
+        .then(data => console.log('Data DLETED: ', data))
+        .catch(error => console.error('Deletion ERROR: ', error))
     },
     createTodo () {
       const name = this.name
@@ -201,6 +195,7 @@ export default {
       const description = this.description
       const format = this.format
       const owner = this.user.username
+      const price = this.price
 
       const id = uuidV4()
       const todo = {
@@ -210,6 +205,7 @@ export default {
         owner,
         description,
         format,
+        price,
         completed: false,
         invoiced: false
       }
@@ -230,8 +226,8 @@ export default {
           }
         }
       })
-        .then(data => console.log(data))
-        .catch(error => console.error('error!!!: ', error))
+        .then(data => console.log('Data Created: ', data))
+        .catch(error => console.error('Data Creation: ', error))
     }
   },
   apollo: {
