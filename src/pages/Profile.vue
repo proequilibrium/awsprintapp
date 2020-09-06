@@ -3,6 +3,7 @@
     <h3>Ucet, </h3>
     <div>Email: {{user.attributes.email}}</div>
     <div>Code: {{user.username}}</div>
+    <div>Lang: {{this.$q.lang.getLocale()}}</div>
     <div>S3 jmeno bucketu: {{$Storage}}</div>
   </div>
 </template>

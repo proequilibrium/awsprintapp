@@ -1,48 +1,68 @@
 <template>
   <q-page padding>
-    <croppa
-      v-model="myCroppa"
-      :width="350"
-      :height="630"
-      placeholder="Yes, you can modify the text here"
-      placeholder-color="#000"
-      :placeholder-font-size="16"
-      canvas-color="transparent"
-      :show-remove-button="true"
-      remove-button-color="black"
-      :remove-button-size="10"
-      :show-loading="true"
-      :loading-size="50"
-      loading-color="#060606">
-    </croppa>
+     <q-stepper
+      v-model="step"
+      header-nav
+      ref="stepper"
+      color="primary"
+      animated
+    >
+      <q-step class="todo" v-for="(monthName, monthIndex) in calendarMonths" :key="monthIndex"
+        :name="monthIndex"
+        :icon="settings"
+        :done="step > monthIndex"
+        :header-nav="step > monthIndex">
+        {{ monthName }} --- {{ monthIndex }}
+        <oneMonth />
+      </q-step>
+
+      <template v-slot:navigation>
+        <q-stepper-navigation>
+          <q-btn @click="$refs.stepper.next()" color="primary" :label="step === calendarMonths.length ? 'Finish' : 'Continue'" />
+          <q-btn v-if="step > 1" flat color="primary" @click="$refs.stepper.previous()" label="Back" class="q-ml-sm" />
+        </q-stepper-navigation>
+      </template>
+    </q-stepper>
   </q-page>
 </template>
 
 <script>
-import Vue from 'vue'
-import Croppa from 'vue-croppa'
-
-Vue.component('croppa', Croppa.component)
-
 export default {
   name: 'CropPage',
-  data () {
-    return {
-      myCroppa: {}
-    }
+  data: () => ({
+    step: 1,
+    calendarMonths: [
+      'Leden',
+      'Únor',
+      'Březen',
+      'Duben',
+      'Květen',
+      'Červen',
+      'Červenec',
+      'Srpen',
+      'Září',
+      'Říjen',
+      'Listopad',
+      'Prosinec'
+    ] // predelat na nacteni z $q
+  }),
+  methods: {
+  },
+  components: {
+    oneMonth: () => import('components/OneMonth.vue')
   }
 }
 </script>
 
 <style scoped>
 .croppa-container {
-   background-color: lightblue;
-   border: 2px solid grey;
-   border-radius: 8px;
+   background-color: rgb(255, 255, 255);
+   border: 1px solid rgb(231, 231, 231);
+   border-radius: 2px;
  }
 
 .croppa-container:hover {
   opacity: 1;
-  background-color: #8ac9ef;
+  background-color: #FFF;
 }
 </style>

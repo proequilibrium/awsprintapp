@@ -1,5 +1,5 @@
 <template>
-  <div class="todo">
+  <div class="todos">
     <div v-if="$apollo.loading">
       <div class="text-xs-center">
         <q-circular-progress indeterminate size="50px" color="lime" class="q-ma-md"/>
@@ -44,6 +44,18 @@
           v-model="format"
         />
         <q-input
+          type="number"
+          ref="format"
+          filled
+          color="teal"
+          dense
+          label="Cena: "
+          clearable
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Neni cena']"
+          v-model="price"
+        />
+        <q-input
           type="date"
           ref="date"
           filled
@@ -64,35 +76,20 @@
             </template>
           </q-btn>
         </div>
-
-        <ul>
-          <li class="todo" v-for="(todo, index) in todos" :key="index">
-             <q-card
-                class="my-card text-white"
-                style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)"
-              >
-                <p class="todoname">{{ todo.name }}</p>
-                <p class="text">{{ todo.description }}</p>
-                <p class="text">format: {{ todo.format }}</p>
-                <p class="text">termin: {{ todo.date }}</p>
-                <p class="number">cena: {{ todo.price }}</p>
-                <q-btn
-                  @click="toggleComplete(todo)"
-                  class="text button"
-                >{{ todo.completed ? 'hotovo' : 'rozdelano' }}</q-btn>
-                    <q-btn style="background: pinkbtn; color: white" label="Smazat zaznam"  @click="deleteTodo(todo)" class="text button delete" />
-             </q-card>
-          </li>
-        </ul>
       </div>
     </form>
+    <ul>
+      <li class="todo" v-for="(todo, index) in todos" :key="index">
+        <oneTask :Task="todo" :indexTask="index" @deleted-task="deletedItem"></oneTask>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 import gql from 'graphql-tag'
 import { listTodos } from '../graphql/queries'
-import { createTodo, deleteTodo, updateTodo } from '../graphql/mutations'
+import { createTodo } from '../graphql/mutations'
 import uuidV4 from 'uuid/v4'
 import { date } from 'quasar'
 
@@ -107,6 +104,12 @@ export default {
   },
   data () {
     return {
+      name: '',
+      description: '',
+      format: '',
+      owner: 'foo', // this is just a placeholder and will get updated by AppSync resolver
+      user: '',
+      price: '',
       todos: []
     }
   },
@@ -131,63 +134,11 @@ export default {
           message: 'Chybi vyplnene hodnoty'
         })
       } else {
-        this.$q.notify({
-          icon: 'done',
-          color: 'positive',
-          message: 'Pridano'
-        })
         this.createTodo()
       }
     },
-    toggleComplete (todo) {
-      const updatedTodo = {
-        ...todo,
-        completed: !todo.completed
-      }
-      // graphql layers dont like __typename in our object
-      delete updatedTodo.__typename
-
-      this.$apollo.mutate({
-        mutation: gql(updateTodo),
-        variables: { input: updatedTodo },
-        update: (store, { data: { updateTodo } }) => {
-          const data = store.readQuery({ query: gql(listTodos) })
-          const index = data.listTodos.items.findIndex(item => item.id === updateTodo.id)
-          data.listTodos.items[index] = updateTodo
-          store.writeQuery({ query: gql(listTodos), data })
-        },
-        optimisticResponse: {
-          __typename: 'Mutation',
-          updateTodo: {
-            __typename: 'Todo',
-            ...updatedTodo
-          }
-        }
-      })
-        .then(data => console.log('Toggle_complete: ', data))
-        .catch(error => console.error('Toggle Problem: ', error))
-    },
-    deleteTodo (todo) {
-      this.$apollo.mutate({
-        mutation: gql(deleteTodo),
-        variables: {
-          input: { id: todo.id }
-        },
-        update: (store, { data: { deleteTodo } }) => {
-          const data = store.readQuery({ query: gql(listTodos) })
-          data.listTodos.items = data.listTodos.items.filter(todo => todo.id !== deleteTodo.id)
-          store.writeQuery({ query: gql(listTodos), data })
-        },
-        optimisticResponse: {
-          __typename: 'Mutation',
-          deleteTodo: {
-            __typename: 'Todo',
-            ...todo
-          }
-        }
-      })
-        .then(data => console.log('Data DLETED: ', data))
-        .catch(error => console.error('Deletion ERROR: ', error))
+    deletedItem (index) {
+      console.log('Deleted item index:', index)
     },
     createTodo () {
       const name = this.name
@@ -215,8 +166,9 @@ export default {
         variables: { input: todo },
         update: (store, { data: { createTodo } }) => {
           const data = store.readQuery({ query: gql(listTodos) })
-          data.listTodos.items.push(createTodo)
+          // if data push wil be there then will be displayed twice
           store.writeQuery({ query: gql(listTodos), data })
+          data.listTodos.items.push(createTodo)
         },
         optimisticResponse: {
           __typename: 'Mutation',
@@ -235,6 +187,9 @@ export default {
       query: gql(listTodos),
       update: data => data.listTodos.items
     }
+  },
+  components: {
+    oneTask: () => import('components/Task.vue')
   }
 }
 </script>
