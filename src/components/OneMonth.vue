@@ -32,6 +32,7 @@ import '@quasar/quasar-ui-qcalendar/dist/index.css'
 
 export default {
   name: 'CropPage',
+  props: ['month'],
   data: () => ({
     myCroppa: {},
     czlocale: 'cs',

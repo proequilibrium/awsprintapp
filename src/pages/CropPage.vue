@@ -7,21 +7,22 @@
       color="primary"
       animated
     >
+      <template v-slot:navigation>
+        <q-stepper-navigation>
+          <q-btn @click="$refs.stepper.next()" color="primary" :label="step === calendarMonths.length ? 'Finish' : 'Continue'" />
+          <q-btn v-if="step > 0" flat color="primary" @click="$refs.stepper.previous()" label="Back" class="q-ml-sm" />
+        </q-stepper-navigation>
+      </template>
+
       <q-step class="todo" v-for="(monthName, monthIndex) in calendarMonths" :key="monthIndex"
         :name="monthIndex"
+        :title="monthName"
         :icon="settings"
         :done="step > monthIndex"
         :header-nav="step > monthIndex">
         {{ monthName }} --- {{ monthIndex }}
         <oneMonth />
       </q-step>
-
-      <template v-slot:navigation>
-        <q-stepper-navigation>
-          <q-btn @click="$refs.stepper.next()" color="primary" :label="step === calendarMonths.length ? 'Finish' : 'Continue'" />
-          <q-btn v-if="step > 1" flat color="primary" @click="$refs.stepper.previous()" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
-      </template>
     </q-stepper>
   </q-page>
 </template>
@@ -30,7 +31,7 @@
 export default {
   name: 'CropPage',
   data: () => ({
-    step: 1,
+    step: 0,
     calendarMonths: [
       'Leden',
       'Únor',
