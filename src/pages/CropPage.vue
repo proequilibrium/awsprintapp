@@ -5,6 +5,7 @@
       header-nav
       ref="stepper"
       color="primary"
+      keep-alive
       animated
     >
       <template v-slot:navigation>
@@ -17,11 +18,10 @@
       <q-step class="todo" v-for="(monthName, monthIndex) in calendarMonths" :key="monthIndex"
         :name="monthIndex"
         :title="monthName"
-        :icon="settings"
         :done="step > monthIndex"
         :header-nav="step > monthIndex">
         {{ monthName }} --- {{ monthIndex }}
-        <oneMonth />
+        <oneMonth :thisMonth="monthIndex"/>
       </q-step>
     </q-stepper>
   </q-page>
@@ -45,7 +45,8 @@ export default {
       'Říjen',
       'Listopad',
       'Prosinec'
-    ] // predelat na nacteni z $q
+    ], // predelat na nacteni z $q
+    photoBlobs: []
   }),
   methods: {
   },

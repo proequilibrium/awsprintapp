@@ -19,6 +19,7 @@
     <q-calendar
       ref="calendar"
       :locale="czlocale"
+      :value="monthToShow"
     ></q-calendar>
   </q-page>
 </template>
@@ -32,12 +33,18 @@ import '@quasar/quasar-ui-qcalendar/dist/index.css'
 
 export default {
   name: 'CropPage',
-  props: ['month'],
+  props: ['thisMonth'],
   data: () => ({
     myCroppa: {},
     czlocale: 'cs',
-    date: new Date().toISOString()
+    cislo: '1',
+    monthEnd: '2020-01-31'
   }),
+  computed: {
+    monthToShow () {
+      return '2020-' + (this.thisMonth + 1).toString() + '-01'
+    }
+  },
   methods: {
     getLocale () {
       return 'cs'
